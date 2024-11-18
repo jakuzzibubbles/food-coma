@@ -129,8 +129,7 @@ const GameBoard = ({ updateScore }) => {
 
       <div style={textStyle}>
         <p>
-          You can eat each item once, if you click it twice you will fall into
-          food coma, and the game is over!
+          You can eat each item once, if you click it twice you will fall into a food coma, and dinner is over!
         </p>
       </div>
 
