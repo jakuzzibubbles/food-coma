@@ -22,6 +22,7 @@ const GameBoard = ({ updateScore }) => {
   const [cards, setCards] = useState(initialCards);
   const [clickedCards, setClickedCards] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+   const [allItemsClicked, setAllItemsClicked] = useState(false);
 
   const shuffleCards = (cards) => {
     return [...cards].sort(() => Math.random() - 0.5);
@@ -36,11 +37,16 @@ const GameBoard = ({ updateScore }) => {
       setClickedCards([...clickedCards, id]);
       setCards(shuffleCards(cards));
     }
+    // Check if all items have been clicked once
+    if (clickedCards.length + 1 === initialCards.length) {
+      setAllItemsClicked(true);
+    }
   };
 
   const resetGame = () => {
     setClickedCards([]);
     setGameOver(false);
+    setAllItemsClicked(false); 
     setCards(shuffleCards(initialCards));
   };
 
@@ -133,6 +139,17 @@ const GameBoard = ({ updateScore }) => {
         <div style={modalStyle}>
           <h2>Game Over!</h2>
           <p>You've had a food coma!</p>
+          <button style={buttonStyle} onClick={resetGame}>
+            Start New Game
+          </button>
+        </div>
+      )}
+
+      {/* Modal for All Items Clicked */}
+      {allItemsClicked && !gameOver && (
+        <div style={modalStyle}>
+          <h2>Congratulations!</h2>
+          <p>You made it through dinner!</p>
           <button style={buttonStyle} onClick={resetGame}>
             Start New Game
           </button>
