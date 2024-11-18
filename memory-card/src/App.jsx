@@ -21,8 +21,8 @@ const App = () => {
 
   const handleCardCountChange = (event) => {
     const value = parseInt(event.target.value, 10);
-    setNumCards(value > 0 ? value : 6); // Ensure a minimum of 6 cards
-    setScore(0); // Reset score when changing card count
+    setNumCards(value > 0 ? value : 6);
+    setScore(0);
   };
 
   return (
