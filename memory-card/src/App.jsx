@@ -39,6 +39,9 @@ const App = () => {
         />
       </div>
       <GameBoard updateScore={updateScore} numCards={numCards} />
+      <footer style={footerStyle}>
+        <p className="text-black">© 2025 our Linh Nguyen.</p>
+      </footer>
     </div>
   );
 };
@@ -47,5 +50,10 @@ const settingsStyle = {
   margin: "1rem",
   textAlign: "center",
 };
-
+const footerStyle = {
+  marginTop: "2rem",
+  padding: "1rem",
+  backgroundColor: "black",
+  textAlign: "center",
+};
 export default App;
