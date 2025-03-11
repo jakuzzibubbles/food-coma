@@ -40,7 +40,7 @@ const App = () => {
       </div>
       <GameBoard updateScore={updateScore} numCards={numCards} />
       <footer style={footerStyle}>
-        <p className="text-black">© 2025 our Linh Nguyen.</p>
+        <p className="text-black">© 2025 Linh Nguyen.</p>
       </footer>
     </div>
   );
